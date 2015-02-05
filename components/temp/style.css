@@ -1,0 +1,619 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: missionScript;
+  src: url(../fonts/Mission-Script.otf);
+}
+.view {
+  position: relative;
+}
+.view .viewPiece {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.view .viewPiece.ng-enter, .view .viewPiece.ng-leave {
+  -webkit-transition: 0.8s ease-in-out all;
+  -moz-transition: 0.8s ease-in-out all;
+  transition: 0.8s ease-in-out all;
+}
+.view .viewPiece.ng-enter {
+  left: 100%;
+  opacity: 0;
+}
+.view .viewPiece.ng-enter-active {
+  left: 0px;
+  opacity: 1;
+}
+.view .viewPiece.ng-leave {
+  right: 0px;
+  opacity: 1;
+}
+.view .viewPiece.ng-leave-active {
+  right: 100%;
+  opacity: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (min-width: 1980px) {
+  .wrapper {
+    max-width: 1584px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wrapper:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+@media (min-width: 0) and (max-width: 1980px) {
+  .wrapper {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wrapper:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
+.topBar {
+  color: #FFF;
+  background: #f04849;
+  padding: 15px;
+}
+.topBar .logo {
+  color: #FFF;
+  text-transform: lowercase;
+  font-family: "missionScript", sans-serif;
+  font-size: 48px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+.topBar .logo a {
+  -webkit-transition: 0.2s all ease;
+  -moz-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+.topBar .logo a:hover {
+  color: #f0b8b9;
+}
+.topBar .mainNav {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333%;
+  float: right;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+.topBar .mainNav ul li {
+  display: inline-block;
+  margin: 15px 15px 8px 15px;
+  color: #FFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-weight: 300;
+  font-size: 20px;
+  -webkit-transition: 0.2s all ease;
+  -moz-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+.topBar .mainNav ul li:hover {
+  color: #f0b8b9;
+}
+
+input[type="text"], input[type="password"], input[type="textarea"] {
+  color: #6c7a80;
+  border: 1px solid #6c7a80;
+  border-radius: 4px;
+  padding: 15px;
+  font-family: "Lato", sans-serif;
+}
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="textarea"]::-webkit-input-placeholder {
+  color: #6c7a80;
+}
+input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="textarea"]:-moz-placeholder {
+  color: #6c7a80;
+}
+input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="textarea"]::-moz-placeholder {
+  color: #6c7a80;
+}
+input[type="text"]:focus:-ms-input-placeholder, input[type="password"]:focus:-ms-input-placeholder, input[type="textarea"]:focus:-ms-input-placeholder {
+  color: #6c7a80;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="textarea"]:focus {
+  outline: none;
+  color: #f04849;
+  border-color: #f04849;
+}
+input[type="text"]:focus::selection, input[type="password"]:focus::selection, input[type="textarea"]:focus::selection {
+  background: #f04849;
+  color: #FFF;
+}
+input[type="text"]:focus::-webkit-input-placeholder, input[type="password"]:focus::-webkit-input-placeholder, input[type="textarea"]:focus::-webkit-input-placeholder {
+  color: #f04849;
+}
+input[type="text"]:focus:-moz-placeholder, input[type="password"]:focus:-moz-placeholder, input[type="textarea"]:focus:-moz-placeholder {
+  color: #f04849;
+}
+input[type="text"]:focus::-moz-placeholder, input[type="password"]:focus::-moz-placeholder, input[type="textarea"]:focus::-moz-placeholder {
+  color: #f04849;
+}
+input[type="text"]:focus:focus:-ms-input-placeholder, input[type="password"]:focus:focus:-ms-input-placeholder, input[type="textarea"]:focus:focus:-ms-input-placeholder {
+  color: #f04849;
+}
+
+.home .hero {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  background-color: #6c7a80;
+  background-image: -webkit-radial-gradient(#6c7a80, #22313f);
+  background-image: radial-gradient(  #6c7a80, #22313f);
+}
+.home .hero h3 {
+  font-size: 48px;
+  color: #FFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-weight: bold;
+  margin: auto;
+  padding-top: 220px;
+  width: 30%;
+  letter-spacing: 3px;
+}
+.home .hero .signUpButton {
+  background: #5baade;
+  margin: 20px auto;
+  width: 144px;
+  text-align: center;
+  display: block;
+  color: #FFF;
+  padding: 15px 30px;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  -webkit-transition: 0.2s all ease;
+  -moz-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+.home .hero .signUpButton:hover {
+  background: #9cc4de;
+}
+.home .content .quick {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home .content .quick:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.home .content .quick div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+.home .content .quick div h3 {
+  color: #f04849;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  margin: 15px 0;
+  text-align: center;
+}
+.home .content .quick div p {
+  color: #6c7a80;
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+  margin: 15px 0;
+}
+
+@media (min-width: 1980px) {
+  .logIn, .register {
+    max-width: 254px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logIn:after, .register:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+@media (min-width: 0) and (max-width: 1980px) {
+  .logIn, .register {
+    max-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logIn:after, .register:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+.logIn h2, .register h2 {
+  color: #f04849;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 30px 0 15px 0;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.logIn .email, .logIn .password, .logIn .username, .logIn .confirmPassword, .register .email, .register .password, .register .username, .register .confirmPassword {
+  width: 90%;
+  margin: 15px auto;
+}
+.logIn .name, .register .name {
+  margin: 15px auto;
+  width: 40.5%;
+}
+.logIn .submit, .register .submit {
+  background: #5baade;
+  border: none;
+  margin: 20px auto;
+  width: 144px;
+  text-align: center;
+  display: block;
+  color: #FFF;
+  padding: 15px 30px;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.2s all ease;
+  -moz-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+.logIn .submit:hover, .register .submit:hover {
+  background: #9cc4de;
+}
+.logIn span, .register span {
+  color: #6c7a80;
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.logIn span a, .register span a {
+  color: #5baade;
+  text-decoration: underline;
+}
+
+.appContain h2 {
+  color: #f04849;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 30px -40px 30px 0;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (min-width: 1980px) {
+  .appContain {
+    max-width: 254px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .appContain:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+@media (min-width: 0) and (max-width: 1980px) {
+  .appContain {
+    max-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .appContain:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+.appContain input[type="text"] {
+  display: block;
+  margin: 15px;
+}
+.appContain .title {
+  width: 100%;
+}
+.appContain .year {
+  width: 25%;
+}
+.appContain .blurb {
+  display: block;
+  margin: 15px;
+}
+.appContain input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 15px;
+  padding: 15px;
+}
+.appContain input[type="range"]::-webkit-slider-runnable-track {
+  height: 1px;
+  background: #6c7a80;
+  width: 100%;
+}
+.appContain input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 30px;
+  width: 10px;
+  border-radius: 5px;
+  background: #f04849;
+  margin-top: -15px;
+}
+.appContain input[type="range"]:focus {
+  outline: none;
+}
+.appContain .ratingSection {
+  padding: 15px;
+}
+.appContain .ratingSection .left {
+  float: left;
+  margin: 15px;
+  color: #f04849;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.appContain .ratingSection .right {
+  float: right;
+  display: block;
+  margin: 15px;
+  color: #f04849;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-right: -30px;
+}
+.appContain .total {
+  color: #22313f;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+.appContain .total h4 {
+  float: left;
+  margin-left: 30px;
+}
+.appContain .total span {
+  float: right;
+  margin-right: -15px;
+}
+.appContain button[type="submit"] {
+  background: #5baade;
+  margin: 40px 0;
+  width: 144px;
+  text-align: center;
+  display: block;
+  color: #FFF;
+  padding: 15px 30px;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 47.75%;
+  -webkit-transition: 0.2s all ease;
+  -moz-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+.appContain button[type="submit"]:hover {
+  background: #9cc4de;
+}
+
+@media (min-width: 1980px) {
+  .bitListContainer {
+    max-width: 508px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bitListContainer:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+@media (min-width: 0) and (max-width: 1980px) {
+  .bitListContainer {
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bitListContainer:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+.bitListContainer h3 {
+  color: #6c7a80;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 30px 0;
+  text-align: center;
+}
+.bitListContainer .loadMore {
+  margin: 30px 0;
+  text-align: center;
+}
+.bitListContainer .loadMore a {
+  color: #6c7a80;
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+  color: #5baade;
+}
+.bitListContainer .loadMore a:hover {
+  text-decoration: underline;
+}
+
+.bitList .bit {
+  margin: 40px 0;
+  border-bottom: 1px solid #bfbfbf;
+  padding-bottom: 15px;
+}
+.bitList .bit .movieTitle {
+  color: #f04849;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  display: inline-block;
+}
+.bitList .bit .yor {
+  float: right;
+  color: #22313f;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 20px;
+  margin: 15px 0;
+}
+.bitList .bit .blurb {
+  color: #6c7a80;
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+  margin: 30px;
+  width: 400%;
+}
+.bitList .bit .ratings {
+  margin: 30px 0;
+}
+.bitList .bit .ratings .rating {
+  color: #FFF;
+  background: #f04849;
+  width: 80px;
+  height: 50px;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  border-radius: 40px;
+  text-align: center;
+  padding-top: 30px;
+  display: inline-block;
+  margin: 0 3%;
+}
+.bitList .bit .ratings .rating.total {
+  background: #22313f;
+  margin-right: 0;
+}
+.bitList .bit .ratings .labels {
+  margin: 15px 0;
+}
+.bitList .bit .ratings .labels span {
+  color: #6c7a80;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  width: 80px;
+  display: inline-block;
+  margin: 0 3%;
+  font-size: 16px;
+}
+
+.profile {
+  margin: 30px 0;
+}
+.profile .left .avatar img {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #6c7a80;
+}
+
+.bottomBar {
+  background: #22313f;
+  color: #6c7a80;
+  height: 200px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,16 @@
+{
+  "name": "filmbit",
+  "version": "0.1.0",
+  "description": "Socially centered Movie Reviews",
+  "author": "Brian Brennan <me@brianbrennan.com>",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-compass": "^2.0.3",
+    "gulp-livereload": "^3.5.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-sass": "^1.3.2",
+    "gulp-uglify": "^1.1.0",
+    "gulp-watch": "^4.1.0",
+    "gulp-webserver": "^0.9.0"
+  }
+}

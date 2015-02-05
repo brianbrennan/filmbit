@@ -1,0 +1,633 @@
+@import 'bourbon';
+@import 'susy';
+@import 'breakpoint';
+@import 'reset.scss';
+
+
+$susy: (
+	columns: 12,
+	gutters: 1/4,
+	gutter-position:inside
+
+	);
+
+
+//----------------------------Fonts--------------------------//
+
+
+@font-face{
+	font-family:missionScript;
+	src: url(../fonts/Mission-Script.otf)
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+
+//----------------------------Variables-----------------------//
+
+
+// Color Variables
+$red		: 		#f04849;
+$lightRed	: 		#f0b8b9;
+$white		: 		#FFF;
+$black		: 		#22313f;
+$gray		: 		#6c7a80;
+$lightGray 	: 		#bfbfbf;
+$blue		: 		#5baade;
+$lightBlue	:  		#9cc4de;
+
+
+// Spacing Variables
+$tny 		:		8px;
+$sm			: 		15px;
+$reg		: 		30px;
+$mid 		: 		40px;
+
+
+// Font-size Variables
+$smlFont	:  		12px;
+$regFont	:  		16px;
+$midFont	:  		20px;
+$lgFont		:  		36px;
+$xlFont		:   	48px;
+
+// Font Variables
+$lato		: 		'Lato', sans-serif;
+$script		: 		'missionScript', sans-serif;
+
+// Viewport Variables
+$maxSize	:  		1980px;
+
+//----------------------------Mixins-------------------------//
+
+@mixin copy(){
+	color:$gray;
+	line-height:1.5;
+	font-family:$lato;
+}
+
+@mixin logo($color){
+	color:$color;
+	text-transform:lowercase;
+	font-family:$script;
+}
+
+@mixin headline($color){
+	color:$color;
+
+	font-family:$lato;
+	font-weight:700;
+}
+
+@mixin textInput(){
+	color:$gray;
+	border:1px solid $gray;
+	border-radius:4px;
+	padding:$sm;
+	font-family:$lato;
+	
+
+	&::-webkit-input-placeholder {
+		color: $gray;
+	}
+	&:-moz-placeholder {
+		color: $gray;
+	}
+
+	&::-moz-placeholder {
+		color: $gray;
+	}
+
+	&:focus:-ms-input-placeholder {
+		color: $gray;
+	}
+	&:focus{
+		outline:none;
+		color: $red;
+		border-color:$red;
+		&::selection{
+			background:$red;
+			color:$white;
+		}
+		&::-webkit-input-placeholder {
+			color: $red;
+		}
+		&:-moz-placeholder {
+			color: $red;
+		}
+
+		&::-moz-placeholder {
+			color: $red;
+		}
+
+		&:focus:-ms-input-placeholder {
+			color: $red;
+		}
+	}
+
+}//mixin textInput
+
+@mixin rangeInput(){
+
+	input[type="range"]{
+		-webkit-appearance: none;
+		width:100%;
+		margin:$sm;
+		padding:$sm;
+
+		&::-webkit-slider-runnable-track {
+			height: 1px;
+			background: $gray;
+			width:100%;
+		}
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			border: none;
+			height: 30px;
+			width: 10px;
+			border-radius: 5px;
+			background: $red;
+			margin-top: -15px;
+		}
+
+		&:focus{
+			outline:none;
+		}
+
+	}
+}
+
+
+//----------------------------Animations--------------------//
+
+
+.view{
+	position:relative;
+
+	.viewPiece{
+		position:absolute;
+		top:0;
+		width:100%;
+
+		&.ng-enter, &.ng-leave{
+			@include transition(0.8s ease-in-out all);
+		}
+
+		&.ng-enter{
+			left:100%;
+			opacity:0;
+		}
+
+		&.ng-enter-active{
+			left:0px;
+			opacity:1;
+		}
+
+		&.ng-leave{
+			right:0px;
+			opacity:1;
+		}
+
+		&.ng-leave-active{
+			right:100%;
+			opacity:0;
+		}
+
+	}
+}
+
+
+
+//----------------------------Styles------------------------//
+*{
+	&:focus{
+		outline:none;
+	}
+}
+
+a{
+	text-decoration:none;
+	color:inherit;
+}
+
+body{
+	overflow-x:hidden;
+}
+
+.wrapper{
+	@include breakpoint($maxSize){
+		@include container(1584px);
+	}
+	@include breakpoint(0 $maxSize){
+		@include container(80%);
+	}
+}
+
+.topBar{
+	color:$white;
+	background:$red;
+	padding:$sm;
+
+	.logo{
+		@include logo($white);
+		font-size:$xlFont;
+		@include span(3);
+
+		a{		
+			@include transition(.2s all ease);
+		}
+
+		a:hover{
+			color:$lightRed;
+		}
+	}
+
+	.mainNav{
+		@include span(4 omega);
+		ul{
+			li{
+				display:inline-block;
+				margin:$sm $sm $tny $sm;
+				@include headline($white);
+				font-weight:300;
+				font-size:$midFont;
+				@include transition(.2s all ease);
+
+				&:hover{
+					color:$lightRed;
+				}
+			}
+		}
+	}//.mainNav
+}
+
+
+input[type = "text"], input[type="password"], input[type="textarea"]{
+	@include textInput();
+}
+
+.home{
+	.hero{
+		width:100%;
+		height:600px;
+		position:relative;
+		@include radial-gradient($gray,$black);
+		
+		h3{
+			font-size:$xlFont;
+			@include headline($white);
+			text-align:center;
+			font-weight:bold;
+			margin: auto;
+			padding-top:220px;
+			width:30%;
+			letter-spacing:3px;
+		}
+
+		.signUpButton{
+			background:$blue;
+			margin:20px auto;
+			width:144px;
+			text-align:center;
+			display:block;
+			color:$white;
+			padding:$sm $reg;
+			font-family:$lato;
+			font-size:$midFont;
+			@include transition(.2s all ease);
+
+			&:hover{
+				background:$lightBlue;
+			}
+
+			
+		}
+	}//.hero
+
+	.content{
+
+		.quick{
+			@include container(80%);
+
+			div{
+				@include span(4);
+
+				h3{
+					@include headline($red);
+					font-size:$lgFont;
+					margin:$sm 0;
+					text-align:center;
+
+				}
+
+				p{
+					@include copy();
+					margin:$sm 0;
+				}
+			}
+		}
+	}
+}//.home
+
+
+.logIn, .register{
+	@include breakpoint($maxSize){
+		@include container(254px);
+	}
+	@include breakpoint(0 $maxSize){
+		@include container(20%);
+	}
+
+	h2{
+		@include headline($red);
+		font-size:$midFont;
+		margin:$reg 0 $sm 0;
+		padding:$sm;
+		text-align:center;
+		text-transform:uppercase;
+
+	}
+
+	.email, .password, .username, .confirmPassword{
+		width:90%;
+		margin:$sm auto;
+	}
+
+	.name{
+		margin:$sm auto;
+		width:40.5%;
+	}
+
+	.submit{
+		background:$blue;
+		border:none;
+		margin:20px auto;
+		width:144px;
+		text-align:center;
+		display:block;
+		color:$white;
+		padding:$sm $reg;
+		font-family:$lato;
+		font-size:$midFont;
+		cursor:pointer;
+		@include transition(.2s all ease);
+
+		&:hover{
+			background:$lightBlue;
+		}
+	}
+
+	span{
+		@include copy();
+		text-align:center;
+		display:block;
+		width:100%;
+
+		a{
+			color:$blue;
+			text-decoration:underline;
+		}
+	}
+}//.logIn
+
+
+
+
+
+
+
+
+.appContain{
+
+	h2{
+		@include headline($red);
+		font-size:$midFont;
+		margin:$reg (-$mid) $reg 0;
+		padding:$sm;
+		text-align:center;
+		text-transform:uppercase;
+
+	}
+
+	@include breakpoint($maxSize){
+		@include container(254px);
+	}
+	@include breakpoint(0 $maxSize){
+		@include container(20%);
+	}
+
+	input[type="text"]{
+		display:block;
+		margin:$sm;
+	}
+
+	.title{
+		width:100%;
+
+	}
+
+	.year{
+		width:25%;
+	}
+
+	.blurb{
+		display:block;
+		margin:$sm;
+	}
+
+	@include rangeInput();
+
+	.ratingSection{
+		padding:$sm;
+
+		.left{
+			float:left;
+			margin:$sm;
+			@include headline($red);
+			font-size:$midFont;
+			text-transform:uppercase;
+		}
+
+		.right{
+			float:right;
+			display:block;
+			margin:$sm;
+			@include headline($red);
+			font-size:$midFont;
+			text-transform:uppercase;
+			margin-right:-$reg;
+
+		}
+	}
+
+	.total{
+		@include headline($black);
+		font-size:$lgFont;
+		margin-bottom:$reg;
+
+		h4{
+			float:left;
+			margin-left:$reg;
+		}
+
+		span{
+			float:right;
+			margin-right:-($sm);
+		}
+	}
+
+	button[type="submit"]{
+		background:$blue;
+		margin:$mid 0;
+		width:144px;
+		text-align:center;
+		display:block;
+		color:$white;
+		padding:$sm $reg;
+		font-family:$lato;
+		font-size:$midFont;
+		border:none;
+		cursor:pointer;
+		position:absolute;
+		left:47.75%;
+		@include transition(.2s all ease);
+
+		&:hover{
+			background:$lightBlue;
+		}
+
+	}
+
+
+}
+
+.bitListContainer{
+	@include breakpoint($maxSize){
+		@include container(508px);
+	}
+	@include breakpoint(0 $maxSize){
+		@include container(40%);
+	}
+
+	h3{
+		@include headline($gray);
+		font-size:$midFont;
+		margin:$reg 0;
+		text-align:center;
+	}
+
+	.loadMore{
+		margin:$reg 0;
+		text-align:center;
+
+		a{
+			
+			@include copy();
+			color:$blue;
+
+			&:hover{
+
+				text-decoration:underline;
+			}
+
+		}
+	}
+
+}
+
+.bitList{
+
+
+	.bit{
+		margin:$mid 0;
+		border-bottom: 1px solid $lightGray;
+		padding-bottom:$sm;
+
+		.movieTitle{
+			@include headline($red);
+			font-size:$lgFont;
+			display:inline-block;
+		}
+
+		.yor{
+			float:right;
+			@include headline($black);
+			display:inline-block;
+			font-size:$midFont;
+			margin:$sm 0;
+		}
+
+		.blurb{
+			@include copy();
+			margin:$reg;
+			width:400%;
+		}
+
+		.ratings{
+			margin:$reg 0;
+
+			.rating{
+				color:$white;
+				background:$red;
+				width:80px;
+				height:50px;
+				font-family:$lato;
+				font-size:$midFont;
+				border-radius:40px;
+				text-align:center;
+				padding-top:30px;
+				display:inline-block;
+				margin:0 3%;
+			}
+
+			.rating.total{
+				background:$black;
+				margin-right:0;
+
+			}
+
+			.labels{
+				margin:$sm 0;
+
+				span{
+					color:$gray;
+					font-family:$lato;
+					font-size:$midFont;
+					text-align:center;
+					width:80px;
+					display:inline-block;
+					margin:0 3%;
+					font-size:$regFont;
+				}
+			}
+		}//.ratings
+	}//.bit
+
+}
+
+.profile{
+	margin:$reg  0;
+
+
+	.left{
+		
+		.avatar{
+
+			img{
+
+				width:300px;
+				height:300px;
+				border:1px solid $gray;
+			}
+		}
+	}
+}//.profile
+
+
+
+.bottomBar{
+	background:$black;
+	color:$gray;
+	height:200px;
+}

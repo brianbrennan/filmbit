@@ -1,0 +1,15 @@
+<div class="wrapper">
+	<div class="logo"><a ng-href="#/">Filmbit</a></div>
+
+	<nav class="mainNav">
+		<ul>
+			<li><a ng-href="#/">Home</a></li>
+			<li ng-show="authUser.uid"><a ng-href="#/bitList">List</a></li>
+			<li ng-show="authUser.uid"><a ng-href="#/bitForm">Create</a></li>
+			<li ng-hide="authUser.uid"><a ng-href="#/login">Log In</a></li>
+			<li ng-show="authUser.uid"><a ng-click="logout()">Logout</a></li>
+			<li ng-hide="authUser.uid"><a ng-href="#/register">Sign Up</a></li>
+		</ul>
+
+	</nav>
+</div>

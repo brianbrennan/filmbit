@@ -1,0 +1,39 @@
+<div class="bitListContainer">
+	<h3>Recent Bits</h3>
+
+	<div class="bitList" ng-repeat="bit in bitList">
+		<div class="bit">
+
+			<h4 class="movieTitle">{{bit.movieTitle}}</h4>
+
+			<span class="yor">{{bit.yearOfRelease}}</span>
+
+			<div class="ratings">
+
+				<div class="labels">
+					<span>Plot</span>
+					<span>Setting</span>
+					<span>Visual</span>
+					<span>Acting</span>
+					<span>Total</span>
+				</div>
+
+				<div class="rating plot">{{bit.plotRating}}</div>
+				<div class="rating setting">{{bit.atmoRating}}</div>
+				<div class="rating photo">{{bit.photographyRating}}</div>
+				<div class="rating acting">{{bit.actingRating}}</div>
+				<div class="rating total">{{bit.totalRating}}</div>
+
+			</div>
+
+			<div class="blurb">
+				{{bit.blurb}}
+			</div>
+
+		</div><!-- bit  -->
+	</div>
+	<div class="loadMore">
+		<a href="">Load More</a>
+	</div>
+
+</div>

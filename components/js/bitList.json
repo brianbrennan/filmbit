@@ -1,0 +1,20 @@
+[
+    {
+        "movieTitle": "The Imitation Game",
+        "yearOfRelease": 2014,
+        "plotRating": 9,
+        "settingRating": 8,
+        "photographyRating": 8,
+        "actingRating": 9,
+        "total": 8.5
+    },
+    {
+        "movieTitle": "Braveheart",
+        "yearOfRelease": 1995,
+        "plotRating": 8,
+        "settingRating": 8,
+        "photographyRating": 7,
+        "actingRating": 7,
+        "total": 7.5
+    }
+]

@@ -1,0 +1,19 @@
+<div class="register">
+	
+	<h2>Register</h2>
+	<form name="register" ng-submit="registerUser()" novalidate>
+		<input type="text" placeholder=" First Name" class="name" ng-model="user.firstName">
+		<input type="text" placeholder=" Last Name" class="name" ng-model="user.lastName">
+		<input type="text" placeholder="Username" class="username" ng-model="user.uesername" ng-required="true">
+		<input type="text" placeholder="Email" class="email" ng-model="user.email" ng-required="true">
+		<input type="password" placeholder="Password" class="password" ng-model="user.password" ng-required="true">
+		<input type="password" placeholder="Confirm Password" class="confirmPassword" ng-required="true">
+
+		<button type="submit" id="loginSubmit" class="submit">Sign Up</button>
+
+		<span><a ng-href="#/login">Already a User?</span>
+
+	</form>
+
+
+</div>

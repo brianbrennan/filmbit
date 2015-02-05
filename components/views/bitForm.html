@@ -1,0 +1,52 @@
+
+<div class="appContain" ng-init="plotRating = 5; actingRating = 5; cineRating = 5; storyRating = 5; atmoRating = 5;">
+	<h2>Create a Bit</h2>
+
+	<form name="bitForm" ng-submit="addBit()" novalidate>
+		
+		<input type="text" placeholder="Movie Title" class="title" ng-required="true" ng-model="movieTitle">
+
+		<input type="text" placeholder="Year of Release" class="year" ng-required="true" ng-model="yearOfRelease">
+
+		<input type="textarea" placeholder="Blurb" class="blurb" ng-required="false" ng-model="blurb" maxlength="200">
+
+		<div class="ratingSection">
+			<span class="left">Plot:</span>
+			<span class="right">	
+				<output for="plot" id="plotNum">{{plotRating}}</output>
+			</span>
+		</div>
+		<input type="range" min=0 value=5 max=10 step=1 id="plot" ng-model="plotRating" ng-change="total()">
+
+		<div class="ratingSection">
+			<span class="left">Acting:</span>
+			<span class="right">	
+				<output for="acting" id="actingNum">{{actingRating}}</output>
+			</span>
+		</div>
+		<input type="range" min=0 value=5 max=10 step=1 id="acting" ng-model="actingRating" ng-change="total()">
+
+		<div class="ratingSection">
+			<span class="left">Setting:</span>
+			<span class="right">	
+				<output for="atmo" id="atmoNum">{{atmoRating}}</output>
+			</span>
+		</div>
+		<input type="range" min=0 value=5 max=10 step=1 id="atmo" ng-model="atmoRating" ng-change="total()">
+
+		<div class="ratingSection">
+			<span class="left">Visual:</span>
+			<span class="right">
+				<output for="visual" id="visualNum">{{cineRating}}</output>
+			</span>
+		</div>
+		<input type="range" min=0 value=5 max=10 step=1 id="visual" ng-model="cineRating" ng-change="total()">
+
+
+		<div class="total">
+			<h4>Total:</h4>
+			<span class="totalRating">{{totalRating}}</span>
+		</div>
+		<button type="submit" ng-disabled="bitForm.$invalid">Submit</button>
+	</form>
+</div>
