@@ -64,6 +64,7 @@ table {
   position: absolute;
   top: 0;
   width: 100%;
+  overflow-x: hidden;
 }
 .view .viewPiece.ng-enter, .view .viewPiece.ng-leave {
   -webkit-transition: 0.8s ease-in-out all;
@@ -265,13 +266,14 @@ input[type="text"]:focus:focus:-ms-input-placeholder, input[type="password"]:foc
   clear: both;
 }
 .home .content .quick div {
+  margin: 30px 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 33.33333%;
   float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
+  padding-left: 3.64583%;
+  padding-right: 3.64583%;
 }
 .home .content .quick div h3 {
   color: #f04849;
@@ -286,6 +288,78 @@ input[type="text"]:focus:focus:-ms-input-placeholder, input[type="password"]:foc
   line-height: 1.5;
   font-family: "Lato", sans-serif;
   margin: 15px 0;
+}
+.home .content .recent {
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home .content .recent:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.home .content .recent .bit {
+  margin: 40px 0;
+  border-bottom: 1px solid #bfbfbf;
+  padding-bottom: 15px;
+}
+.home .content .recent .bit .movieTitle {
+  color: #f04849;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  display: inline-block;
+}
+.home .content .recent .bit .yor {
+  float: right;
+  color: #22313f;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  margin: 8px 8px;
+}
+.home .content .recent .bit .blurb {
+  color: #6c7a80;
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+  margin: 30px;
+  width: 400%;
+}
+.home .content .recent .bit .ratings {
+  margin: 30px 0;
+}
+.home .content .recent .bit .ratings .rating {
+  color: #FFF;
+  background: #f04849;
+  width: 80px;
+  height: 50px;
+  font-family: "Lato", sans-serif;
+  border-radius: 40px;
+  text-align: center;
+  padding-top: 30px;
+  display: inline-block;
+  margin: 0 3%;
+}
+.home .content .recent .bit .ratings .rating.total {
+  background: #22313f;
+  margin-right: 0;
+}
+.home .content .recent .bit .ratings .labels {
+  margin: 15px 0;
+}
+.home .content .recent .bit .ratings .labels span {
+  color: #6c7a80;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  width: 80px;
+  display: inline-block;
+  margin: 0 3%;
+  font-size: 16px;
+}
+.home .content .recent .bit .ratings .labels .total {
+  margin-right: 0;
 }
 
 @media (min-width: 1980px) {
@@ -610,10 +684,47 @@ input[type="text"]:focus:focus:-ms-input-placeholder, input[type="password"]:foc
   border: 1px solid #6c7a80;
 }
 
-.bottomBar {
+.bottom {
+  clear: both;
   background: #22313f;
+  color: #bfbfbf;
+  padding: 40px;
+}
+.bottom .footContain {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+}
+.bottom .footContain:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.bottom .footContain ul {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  float: left;
+  padding-left: 3.64583%;
+  padding-right: 3.64583%;
+}
+.bottom .footContain .logo {
   color: #6c7a80;
-  height: 200px;
+  text-transform: lowercase;
+  font-family: "missionScript", sans-serif;
+  font-size: 48px;
+  text-align: right;
+  padding: 15px 0;
+}
+.bottom .footContain .copyright {
+  clear: both;
+  font-size: 12px;
+  text-align: center;
+  padding: 30px 0 0 0;
+  margin-bottom: -15px;
 }
 
 /*# sourceMappingURL=style.css.map */

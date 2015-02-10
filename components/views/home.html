@@ -12,20 +12,55 @@
 		<div class="quick">
 			
 			<div>
-				<h3>Test</h3>
-	
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, magnam consectetur ad alias optio explicabo cumque facilis temporibus tempore tempora! Aperiam doloribus reiciendis ea ipsa quasi, sapiente. Rerum, autem, velit.</p>
+				<h3>Create Reviews</h3>
+
+				<p>Use the bit creation form to build easy to read and understand critiques of any film you've seen. Catalog and save any review of a movie you've seen in seconds</p>
 			</div>
 			<div>
-				<h3>Test</h3>
-	
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, magnam consectetur ad alias optio explicabo cumque facilis temporibus tempore tempora! Aperiam doloribus reiciendis ea ipsa quasi, sapiente. Rerum, autem, velit.</p>
+				<h3>Share Your Bits</h3>
+
+				<p>Once you've saved your own bit reviews, easily share them on your favorite social media, including Twitter and Facebook. Quickly show your friends and followers your thoughts on a film in a concise manner</p>
 			</div>
 			<div>
-				<h3>Test</h3>
-	
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, magnam consectetur ad alias optio explicabo cumque facilis temporibus tempore tempora! Aperiam doloribus reiciendis ea ipsa quasi, sapiente. Rerum, autem, velit.</p>
+				<h3>Follow Your Favorites</h3>
+
+				<p>Find and follow your favorite critics, friends, or anyone else. View all of their bits in an easy to read format, and be inspired to see movies that you have yet to see.</p>
 			</div>
+		</div>
+
+		<div class="recent" ng-repeat="bit in bitList">
+			
+			<div class="bit">
+
+				<h4 class="movieTitle">{{bit.movieTitle}}</h4>
+
+				<span class="yor">{{bit.yearOfRelease}}</span>
+
+				<div class="ratings">
+
+					<div class="labels">
+						<span>Plot</span>
+						<span>Setting</span>
+						<span>Visual</span>
+						<span>Acting</span>
+						<span class="total">Total</span>
+					</div>
+
+					<div class="rating plot">{{bit.plotRating}}</div>
+					<div class="rating setting">{{bit.atmoRating}}</div>
+					<div class="rating photo">{{bit.photographyRating}}</div>
+					<div class="rating acting">{{bit.actingRating}}</div>
+					<div class="rating total">{{bit.totalRating}}</div>
+
+				</div>
+
+				<div class="blurb">
+					{{bit.blurb}}
+				</div>
+
+			</div><!-- bit  -->
+
+
 		</div>
 
 	</div>
@@ -34,3 +69,5 @@
 
 
 </div>
+
+<footer class="bottom" ng-include src="'views/footer.html'"></footer>

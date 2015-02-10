@@ -4,19 +4,8 @@ filmBit.controller('RegisterController',
 		var ref = new Firebase("https://filmbitapp.firebaseio.com");
 
 		$scope.loginUser =  function(){
-			ref.authWithPassword({
-				email    : $scope.user.email,
-				password : $scope.user.password,
-
-			}, function(error) {
-				if (error === null) {
-					$location.path('/');
-					$rootScope.user = authData;
-					console.log(authData);
-				} else {
-					console.log("Error Logging User:", error);
-				}
-			});
+			$location.path('/profile');
+			authIn();
 		}
 
 		$scope.registerUser = function(){
@@ -30,10 +19,39 @@ filmBit.controller('RegisterController',
 			}, function(error){
 				if(error === null){
 					console.log('creation successful');
-					$location.path('/');
+					$location.path('/profile');
 
 				} else {
 					console.log('error')
+				}
+			});
+
+			window.location.reload();
+			$location.path('/profile');
+		}
+
+
+		function authIn(){
+			ref.authWithPassword({
+				email    : $scope.user.email,
+				password : $scope.user.password,
+
+			}, function(error) {
+				if (error === null) {
+					$location.path('/');
+					$rootScope.user = authData;
+					console.log(authData);
+				} else {
+					console.log("Error Logging User:", error);
+				}
+			});
+
+			ref.onAuth(function(authData){
+				if (authData) {
+					
+					window.location.reload();
+				} else {
+					console.log("Client unauthenticated.")
 				}
 			});
 		}

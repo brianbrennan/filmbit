@@ -10,6 +10,12 @@ $susy: (
 	gutter-position:inside
 
 	);
+$home: (
+	columns: 12,
+	gutters: 7,
+	gutter-position:inside
+
+	);
 
 
 //----------------------------Fonts--------------------------//
@@ -169,6 +175,7 @@ $maxSize	:  		1980px;
 		position:absolute;
 		top:0;
 		width:100%;
+		overflow-x:hidden;
 
 		&.ng-enter, &.ng-leave{
 			@include transition(0.8s ease-in-out all);
@@ -309,8 +316,10 @@ input[type = "text"], input[type="password"], input[type="textarea"]{
 
 		.quick{
 			@include container(80%);
+			@include layout($home);
 
 			div{
+				margin:$reg 0;
 				@include span(4);
 
 				h3{
@@ -327,7 +336,79 @@ input[type = "text"], input[type="password"], input[type="textarea"]{
 				}
 			}
 		}
-	}
+
+		.recent{
+			@include container(30%);
+
+			.bit{
+				margin:$mid 0;
+				border-bottom: 1px solid $lightGray;
+				padding-bottom:$sm;
+
+				.movieTitle{
+					@include headline($red);
+					font-size:$midFont;
+					display:inline-block;
+				}
+
+				.yor{
+					float:right;
+					@include headline($black);
+					display:inline-block;
+					margin:$tny $tny;
+				}
+
+				.blurb{
+					@include copy();
+					margin:$reg;
+					width:400%;
+				}
+
+				.ratings{
+					margin:$reg 0;
+
+					.rating{
+						color:$white;
+						background:$red;
+						width:80px;
+						height:50px;
+						font-family:$lato;
+						border-radius:40px;
+						text-align:center;
+						padding-top:30px;
+						display:inline-block;
+						margin:0 3%;
+					}
+
+					.rating.total{
+						background:$black;
+						margin-right:0;
+
+					}
+
+					.labels{
+						margin:$sm 0;
+
+						span{
+							color:$gray;
+							font-family:$lato;
+							font-size:$midFont;
+							text-align:center;
+							width:80px;
+							display:inline-block;
+							margin:0 3%;
+							font-size:$regFont;
+						}
+					}
+
+					.labels .total{
+						margin-right:0;
+					}
+		}//.ratings
+	}//.bit
+
+}
+}
 }//.home
 
 
@@ -626,8 +707,35 @@ input[type = "text"], input[type="password"], input[type="textarea"]{
 
 
 
-.bottomBar{
+.bottom{
+	clear:both;
 	background:$black;
-	color:$gray;
-	height:200px;
-}
+	color:$lightGray;
+	padding:$mid;
+
+
+	.footContain{
+		@include container(80%);
+		font-family:$lato;
+		line-height:1.5;
+
+		ul{
+			@include span(3);
+		}
+
+		.logo{
+			@include logo($gray);
+			font-size:$xlFont;
+			text-align:right;
+			padding:$sm 0;
+		}
+
+		.copyright{
+			clear:both;
+			font-size:$smlFont;
+			text-align:center;
+			padding:$reg 0 0 0;
+			margin-bottom:-($sm);
+		}
+	}
+}//.bottom

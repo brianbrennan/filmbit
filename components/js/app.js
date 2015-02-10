@@ -6,7 +6,8 @@ var mainController = angular.module('mainController', ['firebase']);
 filmBit.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
 	when('/', {
-		templateUrl: 'views/home.html'
+		templateUrl: 'views/home.html',
+		controller: 'bitListController'
 	}).
 	when('/bitForm', {
 		templateUrl: 'views/bitForm.html',
