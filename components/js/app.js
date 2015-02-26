@@ -7,26 +7,32 @@ filmBit.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
 	when('/', {
 		templateUrl: 'views/home.html',
-		controller: 'bitListController'
+		controller: 'bitListController',
+		title: '| Home'
 	}).
 	when('/bitForm', {
 		templateUrl: 'views/bitForm.html',
-		controller: 'bitListController'
+		controller: 'bitListController',
+		title: '| bitForm'
 	}).
 	when('/login', {
 		templateUrl: 'views/login.html',
-		controller: 'RegisterController'
+		controller: 'RegisterController',
+		title: '| Login'
 	}).
 	when('/bitList', {
 		templateUrl: 'views/bitList.html',
-		controller: 'bitListController'
+		controller: 'bitListController',
+		title: '| bitList'
 	}).
 	when('/register', {
 		templateUrl: 'views/register.html',
-		controller: 'RegisterController'
+		controller: 'RegisterController',
+		title: '| Sign Up'
 	}).
 	when('/profile', {
-		templateUrl: 'views/profile.html'
+		templateUrl: 'views/profile.html',
+		title: '| Profile'
 	})
 
 }]);

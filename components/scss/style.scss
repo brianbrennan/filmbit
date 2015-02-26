@@ -170,6 +170,7 @@ $maxSize	:  		1980px;
 
 .view{
 	position:relative;
+	margin-top:78px;
 
 	.viewPiece{
 		position:absolute;
@@ -235,6 +236,10 @@ body{
 	color:$white;
 	background:$red;
 	padding:$sm;
+	position:fixed;
+	width:100%;
+	z-index:100;
+	top:0;
 
 	.logo{
 		@include logo($white);
@@ -270,7 +275,7 @@ body{
 }
 
 
-input[type = "text"], input[type="password"], input[type="textarea"]{
+input[type = "text"], input[type="password"], textarea{
 	@include textInput();
 }
 
@@ -515,6 +520,9 @@ input[type = "text"], input[type="password"], input[type="textarea"]{
 	.blurb{
 		display:block;
 		margin:$sm;
+		width:100%;
+		resize: none;
+		line-height:1.5;
 	}
 
 	@include rangeInput();

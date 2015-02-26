@@ -1,5 +1,5 @@
 filmBit.controller('bitListController',
-	function($scope, $firebase){
+	function($scope, $firebase, $rootScope){
 		var ref = new Firebase('https://filmbitapp.firebaseio.com/bitList');
 
 		var bitList = $firebase(ref);

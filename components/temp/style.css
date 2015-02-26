@@ -59,6 +59,7 @@ table {
 }
 .view {
   position: relative;
+  margin-top: 78px;
 }
 .view .viewPiece {
   position: absolute;
@@ -130,6 +131,10 @@ body {
   color: #FFF;
   background: #f04849;
   padding: 15px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
 }
 .topBar .logo {
   color: #FFF;
@@ -177,44 +182,44 @@ body {
   color: #f0b8b9;
 }
 
-input[type="text"], input[type="password"], input[type="textarea"] {
+input[type="text"], input[type="password"], textarea {
   color: #6c7a80;
   border: 1px solid #6c7a80;
   border-radius: 4px;
   padding: 15px;
   font-family: "Lato", sans-serif;
 }
-input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="textarea"]::-webkit-input-placeholder {
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #6c7a80;
 }
-input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="textarea"]:-moz-placeholder {
+input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, textarea:-moz-placeholder {
   color: #6c7a80;
 }
-input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="textarea"]::-moz-placeholder {
+input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder, textarea::-moz-placeholder {
   color: #6c7a80;
 }
-input[type="text"]:focus:-ms-input-placeholder, input[type="password"]:focus:-ms-input-placeholder, input[type="textarea"]:focus:-ms-input-placeholder {
+input[type="text"]:focus:-ms-input-placeholder, input[type="password"]:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   color: #6c7a80;
 }
-input[type="text"]:focus, input[type="password"]:focus, input[type="textarea"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
   outline: none;
   color: #f04849;
   border-color: #f04849;
 }
-input[type="text"]:focus::selection, input[type="password"]:focus::selection, input[type="textarea"]:focus::selection {
+input[type="text"]:focus::selection, input[type="password"]:focus::selection, textarea:focus::selection {
   background: #f04849;
   color: #FFF;
 }
-input[type="text"]:focus::-webkit-input-placeholder, input[type="password"]:focus::-webkit-input-placeholder, input[type="textarea"]:focus::-webkit-input-placeholder {
+input[type="text"]:focus::-webkit-input-placeholder, input[type="password"]:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
   color: #f04849;
 }
-input[type="text"]:focus:-moz-placeholder, input[type="password"]:focus:-moz-placeholder, input[type="textarea"]:focus:-moz-placeholder {
+input[type="text"]:focus:-moz-placeholder, input[type="password"]:focus:-moz-placeholder, textarea:focus:-moz-placeholder {
   color: #f04849;
 }
-input[type="text"]:focus::-moz-placeholder, input[type="password"]:focus::-moz-placeholder, input[type="textarea"]:focus::-moz-placeholder {
+input[type="text"]:focus::-moz-placeholder, input[type="password"]:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
   color: #f04849;
 }
-input[type="text"]:focus:focus:-ms-input-placeholder, input[type="password"]:focus:focus:-ms-input-placeholder, input[type="textarea"]:focus:focus:-ms-input-placeholder {
+input[type="text"]:focus:focus:-ms-input-placeholder, input[type="password"]:focus:focus:-ms-input-placeholder, textarea:focus:focus:-ms-input-placeholder {
   color: #f04849;
 }
 
@@ -483,6 +488,9 @@ input[type="text"]:focus:focus:-ms-input-placeholder, input[type="password"]:foc
 .appContain .blurb {
   display: block;
   margin: 15px;
+  width: 100%;
+  resize: none;
+  line-height: 1.5;
 }
 .appContain input[type="range"] {
   -webkit-appearance: none;

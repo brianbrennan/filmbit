@@ -6,8 +6,8 @@ filmBit.controller('statusController', function($scope, $rootScope, $firebase, $
 
 	function authDataCallback(authData) {
 		if (authData) {
-			console.log("User " + authData.uid + " is logged in with " + authData.provider);
 			$rootScope.authUser = authData;
+			console.log("User " + authData.uid + " is logged in with " + authData.provider);
 		} else {
 			console.log("User is logged out");
 		}
@@ -18,5 +18,10 @@ filmBit.controller('statusController', function($scope, $rootScope, $firebase, $
 		$location.path('/');
 		window.location.reload();
 	}
+
+	$rootScope.$on("$routeChangeSuccess", function(currentRoute, previousRoute){
+    //Change page title, based on Route information
+    $rootScope.title = $route.current.title;
+  });
 
 });//statusController
